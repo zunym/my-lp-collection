@@ -1,20 +1,28 @@
 <!-- Accessing Value -->
 <!-- <h1>{{title}}</h1> -->
 
-<form #lpForm="ngForm" fxLayout="column row">
+<form class="form-control" #lpForm="ngForm" (ngSubmit)="processLP(lpForm)" 
+fxLayout="column row">
 
   <mat-form-field>
-    <input type="text" name="name" placeholder="Album name" ngModel matInput color="accent">
+    <input type="text" name="name" placeholder="Text Album Name" 
+    ngModel matInput color="primary" required>
+    <mat-hint>Album name</mat-hint>
   </mat-form-field>
 
   <mat-form-field>
-    <input type="text" name="artist" placeholder="Artist" ngModel matInput color="accent">
+    <input type="text" name="artist-name" placeholder="Enter Artist Name " 
+    ngModel matInput color="primary" required>
+    <mat-hint>Artist name</mat-hint>
   </mat-form-field>
 
-  <mat-slider step="4" tickInterval="3"></mat-slider>
+  <mat-slider step="10" tickInterval="10" aria-required="true"></mat-slider>
 
   <mat-form-field>
-    <input type="text" name="page" placeholder="Album cover image" ngModel matInput color="accent">
+    <input type="url" name="url" placeholder="Album cover image" 
+    #urlField="ngModel" ngModel matInput color="accent" required url>
+    <mat-hint>Album cover image => string or URL</mat-hint>
+    <mat-error *ngIf="urlField.hasError('url')">Must be a valid url of photo</mat-error>
   </mat-form-field>
 
   <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="8px">
@@ -22,7 +30,7 @@
       <mat-icon>clear</mat-icon>Clear
     </button>
 
-    <button type="submit" mat-button mat-raised-button color="primary">
+    <button type="submit" mat-button mat-raised-button color="primary" [disabled]="lpForm.invalid == true">
       <mat-icon>add</mat-icon>Add
     </button>
   </div>

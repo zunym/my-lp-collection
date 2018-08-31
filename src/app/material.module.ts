@@ -7,13 +7,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import { FlexModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
 
 const MODULES = [
     MatFormFieldModule,MatInputModule,
     MatToolbarModule,MatIconModule,
     MatButtonModule,MatSliderModule,
-    FlexModule,MatCardModule
+    FlexModule,MatCardModule,
+    MatDatepickerModule,MatMomentDateModule
 ]
 
 @NgModule({

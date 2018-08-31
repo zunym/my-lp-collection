@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import{NgForm} from '@angular/forms'
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms'
 
 @Component({
   selector: 'app-form',
@@ -7,11 +7,21 @@ import{NgForm} from '@angular/forms'
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  lpForm : NgForm;
-  title="Hello"
+  @ViewChild('lpForm')
+ 
+  lpForm: NgForm;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  processLP(myform: NgForm) {
+    console.log('myform:', myform.value)
+    console.log('Processing LP: ', this.lpForm.value);
+    for (let k in this.lpForm.value) {
+      console.log('k=', k, 'v=', this.lpForm.value[k]);
+    }
   }
 
 }
