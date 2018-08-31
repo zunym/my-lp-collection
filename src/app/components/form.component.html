@@ -6,7 +6,7 @@ fxLayout="column row">
 
   <mat-form-field>
     <input type="text" name="name" placeholder="Text Album Name" 
-    ngModel matInput color="primary" required>
+    #minField="ngModel" ngModel matInput color="primary" minlength="2" maxlength="20" required>
     <mat-hint>Album name</mat-hint>
   </mat-form-field>
 
@@ -20,7 +20,7 @@ fxLayout="column row">
 
   <mat-form-field>
     <input type="url" name="url" placeholder="Album cover image" 
-    #urlField="ngModel" ngModel matInput color="accent" required url>
+    #urlField="ngModel" ngModel matInput color="accent" required string>
     <mat-hint>Album cover image => string or URL</mat-hint>
     <mat-error *ngIf="urlField.hasError('url')">Must be a valid url of photo</mat-error>
   </mat-form-field>
