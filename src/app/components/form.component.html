@@ -1,3 +1,31 @@
-<p>
-  form works!
-</p>
+<!-- Accessing Value -->
+<!-- <h1>{{title}}</h1> -->
+
+<form #lpForm="ngForm" fxLayout="column row">
+
+  <mat-form-field>
+    <input type="text" name="name" placeholder="Album name" ngModel matInput color="accent">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" name="artist" placeholder="Artist" ngModel matInput color="accent">
+  </mat-form-field>
+
+  <mat-slider step="4" tickInterval="3"></mat-slider>
+
+  <mat-form-field>
+    <input type="text" name="page" placeholder="Album cover image" ngModel matInput color="accent">
+  </mat-form-field>
+
+  <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="8px">
+    <button type="reset" mat-button mat-raised-button color="accent">
+      <mat-icon>clear</mat-icon>Clear
+    </button>
+
+    <button type="submit" mat-button mat-raised-button color="primary">
+      <mat-icon>add</mat-icon>Add
+    </button>
+  </div>
+
+
+</form>

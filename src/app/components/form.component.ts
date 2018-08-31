@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{NgForm} from '@angular/forms'
 
 @Component({
   selector: 'app-form',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-
+  lpForm : NgForm;
+  title="Hello"
   constructor() { }
 
   ngOnInit() {
