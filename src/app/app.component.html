@@ -7,5 +7,5 @@
 <!-- app-form => selector of form component -->
 <app-form></app-form>
 <!-- app-cart => selector of cart component -->
-<app-cart></app-cart>
+<app-cart [cart]="albumList" (itemDelected)="deleteItem($event)"></app-cart>
 

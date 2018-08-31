@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter } from '@angular/core';
 import{NgForm} from '@angular/forms'
 
 @Component({
@@ -9,9 +9,28 @@ import{NgForm} from '@angular/forms'
 export class CartComponent implements OnInit {
 
   entryForm:NgForm;
+  @Input()
+  // @Input('this-is-the-alternative')
+  //attribute
+  cart: string[] = [];
+  
+    //put back
+    @Output()
+    itemDeleted = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
   }
+  removeItem(index: number) {
+    //put back
+    const item = this.cart[index];
+    //console.log('removing items: ', index);
 
+    //delete 1 start from index
+    console.log('removing item:', index);
+    this.cart.splice(index, 1)
+
+    this.itemDeleted.next(item);
+  }
 }

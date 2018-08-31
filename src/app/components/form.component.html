@@ -21,7 +21,7 @@ fxLayout="column row">
   <mat-form-field>
     <input type="url" name="url" placeholder="Album cover image" 
     #urlField="ngModel" ngModel matInput color="accent" required string>
-    <mat-hint>Album cover image => string or URL</mat-hint>
+    <mat-hint>Image Name => string or URL</mat-hint>
     <mat-error *ngIf="urlField.hasError('url')">Must be a valid url of photo</mat-error>
   </mat-form-field>
 
