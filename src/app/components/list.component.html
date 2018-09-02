@@ -1,0 +1,24 @@
+<ul>
+  <div *ngIf="lpList.length <= 0">
+    <i>Your collection is empty</i>
+  </div>
+  <div *ngIf="lpList.length > 0">
+    <i>Your collection has {{lpList.length}} items(s)</i>
+  </div>
+</ul>
+
+<div *ngFor ="let i of lpList; let n = index;">
+<mat-card style="margin:2em;">
+  <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="col">
+      <img src="{{i.image}}" alt="image" height="80" width="80">
+      <div>
+        <mat-card-title style="margin:0.3em;">{{i.album}}</mat-card-title>
+        <mat-card-subtitle style="margin:1em 0em 0em 0.5em;"><i>{{i.artist}}</i></mat-card-subtitle>
+      </div>
+    </div>
+    Rating:
+    {{i.rating}}
+  </mat-card-content>
+</mat-card>
+</div>

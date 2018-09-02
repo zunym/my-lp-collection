@@ -1,11 +1,3 @@
-<!-- mat mat-toolbar -->
-<mat-toolbar color="primary" > 
-    <img style="width:30px;height:30px;" src="assets/cd.png" alt="CD">
-    &nbsp; {{title}}
-</mat-toolbar>
+<app-add (onAddItem) = "itemAdded($event)"></app-add>
 
-<!-- app-form => selector of form component -->
-<app-form></app-form>
-<!-- app-cart => selector of cart component -->
-<app-cart [cart]="albumList" (itemDelected)="deleteItem($event)"></app-cart>
-
+<app-list [lpList]= "lpList"></app-list>

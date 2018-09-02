@@ -1,26 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
-
+import { AddComponent } from './components/cart.component';
+import { ListComponent } from './components/list.component';
+import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from './material.module';
-import {FormComponent} from './components/form.component';
-import {CartComponent} from './components/cart.component';
-import {FormsModule} from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
-    CartComponent
+    AddComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
+    MaterialModule,
     BrowserAnimationsModule,
-    MaterialModule,FormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

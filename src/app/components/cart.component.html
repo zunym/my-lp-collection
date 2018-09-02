@@ -1,4 +1,50 @@
-<div *ngIf="cart.length <=0">
-  <h3>Your cart is empty</h3>
-</div>
-<div class="cart-body" *ngFor="let i of cart; let n = index" (click)="removeItem(n)">{{i}}</div>
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" >
+  My LP Collection
+  <mat-icon>list</mat-icon>
+</mat-toolbar>
+
+<mat-card>
+  <mat-card-content>
+    <form #lp="ngForm"(ngSubmit)="addItem(lp)" >
+
+      <div fxLayout="column row">
+        <br>
+        Album Name:
+          <mat-form-field>
+            <input name="album" placeholder="Name" ngModel matInput required>
+          </mat-form-field>
+        <br>
+        <br>
+        Artist:
+          <mat-form-field>
+            <input name="artist" placeholder="Name" ngModel matInput required>
+          </mat-form-field>
+        <br>
+        <br>
+        Rating:
+        <mat-slider
+              max="10"
+              min="0"
+              step="1"
+              thumbLabel=true
+              tickInterval="1"
+              ngModel
+              name="rating">
+        </mat-slider>
+        <br>
+        <br>
+        Cover Image:
+          <mat-form-field>
+            <input name="image" placeholder="Album Cover Image" ngModel matInput>
+          </mat-form-field>
+        <br>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button type="reset" mat-button mat-raised-button color="accent" ><mat-icon>refresh</mat-icon> Clear</button>
+        <button type="submit" mat-button mat-raised-button color="primary" [disabled]="lp.invalid"><mat-icon>playlist_add</mat-icon> Add</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>
